@@ -8,7 +8,7 @@ export const fetchMovies = async () => {
       Authorization: `Bearer ${API_KEY}`,
     },
     params: {
-      query: "Greyhound", // Название фильма
+      // query: "Greyhound", // Название фильма
       include_adult: false,
       language: "en-US",
       page: 1,
@@ -16,8 +16,8 @@ export const fetchMovies = async () => {
   };
 
   try {
-    const response = await axios.get(url, options);
-    return response.data; // Возвращаем данные
+    const { data } = await axios.get(url, options);
+    return data; // Возвращаем данные
   } catch (error) {
     console.error("Error fetching movies:", error);
     throw error; // Пробрасываем ошибку дальше

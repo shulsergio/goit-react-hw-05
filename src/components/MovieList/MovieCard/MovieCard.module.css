@@ -1,0 +1,16 @@
+.card {
+  width: 200px;
+  height: 300px;
+}
+.movieImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid #e3fdff;
+  border-radius: 4px;
+  box-shadow: 4px 4px 8px rgba(32, 33, 36, 0.35);
+  transition: box-shadow 0.4s ease;
+}
+.movieImg:hover {
+  box-shadow: 4px 4px 8px rgba(32, 33, 36, 0.7);
+}

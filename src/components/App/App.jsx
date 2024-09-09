@@ -1,26 +1,28 @@
-import { Route, Routes } from 'react-router-dom'
-import './App.css'
-import { lazy, Suspense } from 'react';
-import Loader from '../Loader/Loader';
+import { Route, Routes, Navigate } from "react-router-dom";
+import "./App.css";
+import { lazy, Suspense } from "react";
+import Loader from "../Loader/Loader";
+import { Navigation } from "../Navigation/Navigation";
+import MovieDetailsPage from "../../pages/MovieDetailsPage";
+import MoviePage from "../../pages/MoviesPage";
+import NotFoundPage from "../../pages/NotFoundPage";
 
 const HomePage = lazy(() => import("../../pages/HomePage"));
 
-
 const App = () => {
-
-
-
-  return(
+  return (
     <>
-      <div>
-        <p>HW5</p>
-      </div>
+      <Navigation />
       <Suspense fallback={<Loader />}>
-    <Routes>
-    <Route path="/" element={<HomePage />} />
-    </Routes>
-</Suspense>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movies" element={<MoviePage />} />
+          <Route path="/movies/:movieId" element={<MovieDetailsPage />} />
+          <Route path="/movies/:movieId/cast" element={<HomePage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
     </>
-  )
-}
+  );
+};
 export default App;
