@@ -1,7 +1,7 @@
 .box {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 10px 0 0 0;
   display: flex;
   flex-direction: row;
   row-gap: 22px;

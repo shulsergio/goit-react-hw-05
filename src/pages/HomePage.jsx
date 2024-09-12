@@ -46,6 +46,7 @@ const HomePage = () => {
       <Container>
         {isLoading && <Loader />}
         {error && <Heading title="Its wrong" />}
+        {<h2>Trending films today</h2>}
         {movies.length > 0 && <MovieList movies={movies} />}
         {empty && <Heading title="no movies by today, try again..." />}
       </Container>
