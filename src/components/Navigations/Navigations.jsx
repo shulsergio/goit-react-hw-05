@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import css from "./Navigation.module.css";
+import css from "./Navigations.module.css";
 import clsx from "clsx";
 import Container from "../Container/Container";
 
@@ -7,7 +7,7 @@ const getNavStyle = (item) => {
   return clsx(css.link, item.isActive && css.active);
 };
 
-export const Navigation = () => {
+export const Navigations = () => {
   return (
     <Container>
       <header className={css.header}>
